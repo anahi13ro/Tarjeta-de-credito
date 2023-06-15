@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com/" />
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <title>Sprint 1</title>
+  </head>
+  <body>
+    <main class="conteiner">
+      <section class="bloqueImg">
+        <div>
+          <img
+            class="fondo"
+            src="imágenes\bg-main-desktop.png"
+            alt="imagen de fondo"
+          />
+        </div>
+
+        <div class="imagenYdatos">
+          <div class="divFront">
+            <div>
+              <img
+                class="imagen front"
+                src="imágenes\bg-card-front.png"
+                alt="img card front"
+              /><br />
+            </div>
+            <div class="datosTarj">
+              <div class="logo">
+                <svg
+                  id="svgs"
+                  width="84"
+                  height="47"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <ellipse
+                    cx="23.478"
+                    cy="23.5"
+                    rx="23.478"
+                    ry="23.5"
+                    fill="#fff"
+                  />
+                  <path
+                    d="M83.5 23.5c0 5.565-4.507 10.075-10.065 10.075-5.559 0-10.065-4.51-10.065-10.075 0-5.565 4.506-10.075 10.065-10.075 5.558 0 10.065 4.51 10.065 10.075Z"
+                    stroke="#fff"
+                  />
+                </svg>
+              </div>
+              <div class="codigo">
+                <h4 id="numTarj">0000 0000 0000 0000</h4>
+              </div>
+              <div class="nameCard">
+                <p id="nombre">JANE APPLESEED</p>
+                <p id="venc">00/00</p>
+              </div>
+            </div>
+          </div>
+          <div class="divBack">
+            <div>
+              <img
+                class="imagen back"
+                src="imágenes\bg-card-back.png"
+                alt="img card back"
+              />
+            </div>
+            <div class="numCvc">
+              <p id="cvcNum">000</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="bloqueForm" id="bloqueForm">
+          <form class="form needs-validation" novalidate id="form">
+            <div class="row">
+              <div class="col-12">
+                <label class="form-label" for="name">CARDHOLDER NAME</label
+                ><br />
+                <input
+                  class="form-control text-uppercase inputts"
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="e.g Jane Appleseed"
+                  required
+                /><br />
+                <div class="invalid-feedback">Debe colocar un nombre!!</div>
+              </div>
+              <div class="col-12">
+                <label class="form-label" for="cardNumber">CARD NUMBER</label
+                ><br />
+                <input
+                  class="form-control inputts"
+                  id="cardNumber"
+                  maxlength="19"
+                  type="text"
+                  placeholder="e.g 1234 5678 9123 0000"
+                  required
+                />
+                <div class="invalid-feedback">
+                  Debe colocar un número de tarjeta!!
+                </div>
+              </div>
+              <div class="col-6 dateCvc">
+                <fieldset>
+                  <label class="form-label" for="datos">EXP. DATE (MM/YY)</label
+                  ><br />
+                  <div class="fecha">
+                    <input
+                      class="form-control inputts"
+                      id="month"
+                      maxlength="2"
+                      type="text"
+                      name="month"
+                      placeholder="MM"
+                      required
+                    /><br />
+                    <div class="invalid-feedback">colocar mes!</div>
+                    <input
+                      class="form-control inputts"
+                      id="year"
+                      maxlength="2"
+                      type="text"
+                      name="year"
+                      placeholder="YY"
+                      required
+                    />
+                    <div class="invalid-feedback">colocar año</div>
+                  </div>
+                </fieldset>
+              </div>
+              <div class="col-6 cvc">
+                <label class="form-label" for="cvc">CVC</label><br />
+                <input
+                  class="form-control inputts"
+                  id="cvc"
+                  type="text"
+                  name="cvc"
+                  maxlength="3"
+                  placeholder="e.g 123"
+                  required
+                />
+                <div class="invalid-feedback">colocar número cvc</div>
+              </div>
+            </div>
+            <button
+              class="submit btn btn-primary border-0"
+              id="btnSubmit"
+              type="submit"
+            >
+              Confirm
+            </button>
+          </form>
+        </div>
+        <div class="muestra-final disabled" id="muestra-final">
+          <img
+            class="ok"
+            src="imágenes\icon-complete.svg"
+            alt="icon-complete"
+          />
+          <h1 class="thank">THANK YOU!</h1>
+          <p class="p">We've added your card details</p>
+          <button
+            type="submit"
+            id="continuee"
+            class="submit btn btn-primary border-0"
+          >
+            Continue
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <script src="main.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/cleave.js/1.6.0/cleave.min.js"
+      integrity="sha512-KaIyHb30iXTXfGyI9cyKFUIRSSuekJt6/vqXtyQKhQP6ozZEGY8nOtRS6fExqE4+RbYHus2yGyYg1BrqxzV6YA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
